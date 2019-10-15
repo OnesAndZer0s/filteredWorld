@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--
  *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
@@ -19,7 +20,6 @@
     <meta id="theme-color" name="theme-color" content="#ffffff">
 
     <style>
-
         video {
             object-fit: cover;
             width: 50%;
@@ -44,12 +44,9 @@
  *  that can be found in the LICENSE file in the root of the source
  *  tree.
  */
-
 // Put variables in global scope to make them available to the browser console.
 const video1 = window.video = document.getElementById('1');
 const video2 = window.video = document.getElementById('2');
-
-
 const constraints = {
   audio: false,
     video: {
@@ -58,18 +55,14 @@ const constraints = {
         facingMode: "environment"
     }
 };
-
 function handleSuccess(stream) {
   window.stream = stream; // make stream available to browser console
   video1.srcObject = stream;
   video2.srcObject = stream;
-
 }
-
 function handleError(error) {
   console.log('navigator.MediaDevices.getUserMedia error: ', error.message, error.name);
 }
-
 var i = 0
 var styles = ["","grayscale(100%)","blur(5px)","invert(100%)","sepia(100%)","hue-rotate(10deg)"]
 function click(){
@@ -78,8 +71,12 @@ if (i > styles.length-1) {i = 0}
 document.getElementById("1").style.filter = styles[i];
 document.getElementById("2").style.filter = styles[i];
 }
-
 document.onclick = click;
+document.ontouchstart = click;
+video1.onclick = click;
+video1.ontouchstart = click;
+video2.onclick = click;
+video2.ontouchstart = click;
 navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError)
   </script>
 </body>
