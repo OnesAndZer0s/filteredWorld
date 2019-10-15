@@ -73,10 +73,7 @@ document.getElementById("2").style.filter = styles[i];
 }
 document.onclick = click;
 document.ontouchstart = click;
-video1.onclick = click;
-video1.ontouchstart = click;
-video2.onclick = click;
-video2.ontouchstart = click;
+
 navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError)
   </script>
 </body>
