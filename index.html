@@ -64,7 +64,7 @@ function handleError(error) {
   console.log('navigator.MediaDevices.getUserMedia error: ', error.message, error.name);
 }
 var i = 0
-var styles = ["","grayscale(100%)","blur(5px)","invert(100%)","sepia(100%)","hue-rotate(10deg)"]
+var styles = ["none","grayscale(25%)","grayscale(50%)","grayscale(75%)","grayscale(100%)","blur(1px)","blur(3px)","blur(5px)","invert(25%)","invert(50%)","invert(75%)","invert(100%)","sepia(25%)","sepia(50%)","sepia(75%)","sepia(100%)","hue-rotate(90deg)","hue-rotate(180deg)","hue-rotate(270deg)"]
 function click(){
 i++;
 if (i > styles.length-1) {i = 0}
