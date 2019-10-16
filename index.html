@@ -21,6 +21,12 @@
     <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
     
     <style>
+        div {
+            overflow:hidden;
+            width: 50%;
+            height: 100%;
+        }
+        
         video {
             object-fit: cover;
             width: 50%;
@@ -31,9 +37,10 @@
 
 </head>
 <body>
-<div id="container">
-
+<div>
     <video playsinline autoplay style="left:0px;" id="1"></video>
+</div>
+<div>
     <video playsinline autoplay style="right:0px" id="2"></video>
 </div>
   <script>
