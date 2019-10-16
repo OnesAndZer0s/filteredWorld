@@ -45,22 +45,22 @@
 <body>
     <a>...</a>
   <div id="layout">
-    <span>blur </span><input oninput="update()" autocomplete="off" id="blur" value="0"><br>
-    <span>brightness </span><input oninput="update()" autocomplete="off" id="brightness" value="100"><br>
-    <span>contrast </span><input oninput="update()" autocomplete="off" id="contrast" value="100"><br>
-    <span>grayscale </span><input oninput="update()" autocomplete="off" id="grayscale" value="0"><br>
-    <span>hue rotate </span><input oninput="update()" autocomplete="off" id="hueRotate" value="0"><br>
-    <span>invert </span><input oninput="update()" autocomplete="off" id="invert" value="0"><br>
-    <span>saturate </span><input oninput="update()" autocomplete="off" id="saturate" value="100"><br>
-    <span>sepia </span><input oninput="update()" autocomplete="off" id="sepia" value="0"><br>
+    <span>blur </span><input autocomplete="off" id="blur" value="0"><br>
+    <span>brightness </span><input autocomplete="off" id="brightness" value="100"><br>
+    <span>contrast </span><input autocomplete="off" id="contrast" value="100"><br>
+    <span>grayscale </span><input autocomplete="off" id="grayscale" value="0"><br>
+    <span>hue rotate </span><input autocomplete="off" id="hueRotate" value="0"><br>
+    <span>invert </span><input autocomplete="off" id="invert" value="0"><br>
+    <span>saturate </span><input autocomplete="off" id="saturate" value="100"><br>
+    <span>sepia </span><input autocomplete="off" id="sepia" value="0"><br>
     
-    <span>rotate </span><input oninput="update()" autocomplete="off" id="rotate" value="0"><br>
-    <span>scale x </span><input oninput="update()" autocomplete="off" id="scaleX" value="1"><br>
-    <span>scale y </span><input oninput="update()" autocomplete="off" id="scaleY" value="1"><br>
-    <span>translate x </span><input oninput="update()" autocomplete="off" id="translateX" value="0"><br>
-    <span>translate y </span><input oninput="update()" autocomplete="off" id="translateY" value="0"><br>
-    <span>skew x </span><input oninput="update()" autocomplete="off" id="skewX" value="0"><br>
-    <span>skew y </span><input oninput="update()" autocomplete="off" id="skewY" value="0"><br>
+    <span>rotate </span><input autocomplete="off" id="rotate" value="0"><br>
+    <span>scale x </span><input autocomplete="off" id="scaleX" value="1"><br>
+    <span>scale y </span><input autocomplete="off" id="scaleY" value="1"><br>
+    <span>translate x </span><input autocomplete="off" id="translateX" value="0"><br>
+    <span>translate y </span><input autocomplete="off" id="translateY" value="0"><br>
+    <span>skew x </span><input autocomplete="off" id="skewX" value="0"><br>
+    <span>skew y </span><input autocomplete="off" id="skewY" value="0"><br>
    </div>
     
 
@@ -79,8 +79,8 @@
  *  tree.
  */
 // Put variables in global scope to make them available to the browser console.
-const video1 = window.video = document.getElementById('1');
-const video2 = window.video = document.getElementById('2');
+const video1 = document.getElementById('1');
+const video2 = document.getElementById('2');
 const constraints = {
   audio: false,
     video: {
