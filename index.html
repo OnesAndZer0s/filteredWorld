@@ -36,6 +36,26 @@
 
 </head>
 <body>
+  <div id="layout">
+    <span>blur </span><input oninput="update()" autocomplete="off" id="blur" value="0"><br>
+    <span>brightness </span><input oninput="update()" autocomplete="off" id="brightness" value="100"><br>
+    <span>contrast </span><input oninput="update()" autocomplete="off" id="contrast" value="100"><br>
+    <span>grayscale </span><input oninput="update()" autocomplete="off" id="grayscale" value="0"><br>
+    <span>hue rotate </span><input oninput="update()" autocomplete="off" id="hueRotate" value="0"><br>
+    <span>invert </span><input oninput="update()" autocomplete="off" id="invert" value="0"><br>
+    <span>saturate </span><input oninput="update()" autocomplete="off" id="saturate" value="100"><br>
+    <span>sepia </span><input oninput="update()" autocomplete="off" id="sepia" value="0"><br>
+    
+    <span>rotate </span><input oninput="update()" autocomplete="off" id="rotate" value="0"><br>
+    <span>scale x </span><input oninput="update()" autocomplete="off" id="scaleX" value="1"><br>
+    <span>scale y </span><input oninput="update()" autocomplete="off" id="scaleY" value="1"><br>
+    <span>translate x </span><input oninput="update()" autocomplete="off" id="translateX" value="0"><br>
+    <span>translate y </span><input oninput="update()" autocomplete="off" id="translateY" value="0"><br>
+    <span>skew x </span><input oninput="update()" autocomplete="off" id="skewX" value="0"><br>
+    <span>skew y </span><input oninput="update()" autocomplete="off" id="skewY" value="0"><br>
+   </div>
+    
+
 <div>
     <video playsinline autoplay style="left:0px;" id="1"></video>
 </div>
@@ -69,27 +89,34 @@ function handleError(error) {
   console.log('navigator.MediaDevices.getUserMedia error: ', error.message, error.name);
 }
 var i = 0;
-var int = '';
-var color = 0;
-var styles = ["none","grayscale(100%)","blur(1px)","blur(3px)","blur(5px)","invert(100%)","sepia(100%)","hue-rotate(45deg)","hue-rotate(90deg)","hue-rotate(135deg)","hue-rotate(180deg)","hue-rotate(225deg)","hue-rotate(270deg)","hue-rotate(315deg)", "LSD"]
-function click(){
-i++;
-if (i > styles.length-1) {i = 0}
 
-if (styles[i] == "LSD") {
-int = setInterval(function(){
-color++
-if (color > 360) {color = 0}
-document.getElementById("1").style.filter = "hue-rotate("+color+"deg)";
-document.getElementById("2").style.filter = "hue-rotate("+color+"deg)";
-},10)
-} else {
-clearInterval(int);
-document.getElementById("1").style.filter = styles[i];
-document.getElementById("2").style.filter = styles[i];
-}}
-document.onclick = click;
-document.ontouchstart = click;
+setInterval(function(){
+i++;
+var blur = eval(document.getElementById('blur').value),
+    brightness = eval(document.getElementById('brightness').value),
+    contrast = eval(document.getElementById('contrast').value),
+    grayscale = eval(document.getElementById('grayscale').value),
+    hueRotate = eval(document.getElementById('hueRotate').value),
+    invert = eval(document.getElementById('invert').value),
+    saturate = eval(document.getElementById('saturate').value),
+    sepia = eval(document.getElementById('sepia').value),
+    rotate = eval(document.getElementById('rotate').value),
+    scaleX = eval(document.getElementById('scaleX').value),
+    scaleY = eval(document.getElementById('scaleY').value),
+    translateX = eval(document.getElementById('translateX').value),
+    translateY = eval(document.getElementById('translateY').value),
+    skewX = eval(document.getElementById('skewX').value),
+    skewY = eval(document.getElementById('skewY').value);
+
+video1.style.filter = "blur("+blur+"px) brightness("+brightness+"%) contrast("+contrast+"%) hue-rotate("+hueRotate+"deg) grayscale("+grayscale+"%) invert("+invert+"%) saturate("+saturate+"%) sepia("+sepia+"%)";
+video1.style.transform = "rotate("+rotate+"deg) scaleX("+scaleX+") scaleY("+scaleY+") skewX("+skewX+"deg) skewY("+skewY+"deg) translateX("+translateX+"px) translateY("+translateY+"px)";
+
+video2.style.filter = "blur("+blur+"px) brightness("+brightness+"%) contrast("+contrast+"%) hue-rotate("+hueRotate+"deg) grayscale("+grayscale+"%) invert("+invert+"%) saturate("+saturate+"%) sepia("+sepia+"%)";
+video2.style.transform = "rotate("+rotate+"deg) scaleX("+scaleX+") scaleY("+scaleY+") skewX("+skewX+"deg) skewY("+skewY+"deg) translateX("+translateX+"px) translateY("+translateY+"px)";
+
+},1);
+      
+
 navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError)
   </script>
 </body>
