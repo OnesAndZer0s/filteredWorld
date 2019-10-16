@@ -45,7 +45,7 @@
 
 </head>
 <body>
-    <a>...</a>
+    <a ontouchstart="toggle()" >...</a>
   <div id="layout">
     <span>blur </span><input autocomplete="off" id="blur" value="0"><br>
     <span>brightness </span><input autocomplete="off" id="brightness" value="100"><br>
@@ -125,6 +125,17 @@ video2.style.filter = "blur("+blur+"px) brightness("+brightness+"%) contrast("+c
 video2.style.transform = "rotate("+rotate+"deg) scaleX("+scaleX+") scaleY("+scaleY+") skewX("+skewX+"deg) skewY("+skewY+"deg) translateX("+translateX+"px) translateY("+translateY+"px)";
 
 },1);
+      
+function toggle(){
+if (video1.style.display == "none") {
+video1.style.display = "block";
+video2.style.display = "block";
+}
+else {
+video1.style.display = "none";
+video2.style.display = "none";
+}
+}
       
 
 navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError)
