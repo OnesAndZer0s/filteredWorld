@@ -49,8 +49,7 @@ const video2 = window.video = document.getElementById('2');
 const constraints = {
   audio: false,
     video: {
-        width: 640,
-        height: 480,
+        frameRate: { min: 30 },
         facingMode: "environment"
     }
 };
