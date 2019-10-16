@@ -31,7 +31,7 @@
         color:white;
         z-index:10000000000;
         }
-        div {
+        div.hide {
             overflow:hidden;
             width: 50%;
             height: 100%;
@@ -53,6 +53,7 @@
 </head>
 <body>
     <a ontouchstart="toggle()" >...</a>
+<div id="layout">
     <span>blur </span><input autocomplete="off" id="blur" value="0"><br>
     <span>brightness </span><input autocomplete="off" id="brightness" value="100"><br>
     <span>contrast </span><input autocomplete="off" id="contrast" value="100"><br>
@@ -69,12 +70,12 @@
     <span>translate y </span><input autocomplete="off" id="translateY" value="0"><br>
     <span>skew x </span><input autocomplete="off" id="skewX" value="0"><br>
     <span>skew y </span><input autocomplete="off" id="skewY" value="0"><br>
-    
+    </div> 
 
-<div style="left:0px">
+<div class="hide" style="left:0px">
     <video playsinline autoplay id="1"></video>
 </div>
-<div style="right:0px">
+<div class="hide" style="right:0px">
     <video playsinline autoplay id="2"></video>
 </div>
   <script>
@@ -138,6 +139,8 @@ video2.parentElement.style.display = "block";
     
 video1.style.zIndex = 0;
 video2.style.zIndex = 0;
+    
+document.getElementById('layout').style.display = "none";
 }
 else {
 video1.parentElement.style.display = "none";
@@ -145,6 +148,8 @@ video2.parentElement.style.display = "none";
     
 video1.style.zIndex = 100;
 video2.style.zIndex = 100;
+    
+document.getElementById('layout').style.display = "block";
 }
 }
       
