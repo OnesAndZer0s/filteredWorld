@@ -76,7 +76,7 @@ color++
 if (color > 360) {color = 0}
 document.getElementById("1").style.filter = "hue-rotate("+color+"deg)";
 document.getElementById("2").style.filter = "hue-rotate("+color+"deg)";
-},100)
+},10)
 } else {
 clearInterval(int);
 document.getElementById("1").style.filter = styles[i];
