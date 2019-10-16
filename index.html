@@ -62,14 +62,26 @@ function handleSuccess(stream) {
 function handleError(error) {
   console.log('navigator.MediaDevices.getUserMedia error: ', error.message, error.name);
 }
-var i = 0
-var styles = ["none","grayscale(100%)","blur(1px)","blur(3px)","blur(5px)","invert(100%)","sepia(100%)","hue-rotate(45deg)","hue-rotate(90deg)","hue-rotate(135deg)","hue-rotate(180deg)","hue-rotate(225deg)","hue-rotate(270deg)","hue-rotate(315deg)"]
+var i = 0;
+var int = '';
+var color = 0;
+var styles = ["none","grayscale(100%)","blur(1px)","blur(3px)","blur(5px)","invert(100%)","sepia(100%)","hue-rotate(45deg)","hue-rotate(90deg)","hue-rotate(135deg)","hue-rotate(180deg)","hue-rotate(225deg)","hue-rotate(270deg)","hue-rotate(315deg)", "LSD"]
 function click(){
 i++;
 if (i > styles.length-1) {i = 0}
+
+if (styles[i] == "LSD") {
+int = setInterval(function(){
+color++
+if (color > 360) {color = 0}
+document.getElementById("1").style.filter = "hue-rotate("+color+"deg)";
+document.getElementById("2").style.filter = "hue-rotate("+color+"deg)";
+},100)
+} else {
+clearInterval(int);
 document.getElementById("1").style.filter = styles[i];
 document.getElementById("2").style.filter = styles[i];
-}
+}}
 document.onclick = click;
 document.ontouchstart = click;
 navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError)
