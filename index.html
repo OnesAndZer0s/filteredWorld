@@ -170,21 +170,22 @@ navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handl
       
   
 function save(){
-var blur = eval(document.getElementById('blur').value),
-    brightness = eval(document.getElementById('brightness').value),
-    contrast = eval(document.getElementById('contrast').value),
-    grayscale = eval(document.getElementById('grayscale').value),
-    hueRotate = eval(document.getElementById('hueRotate').value),
-    invert = eval(document.getElementById('invert').value),
-    saturate = eval(document.getElementById('saturate').value),
-    sepia = eval(document.getElementById('sepia').value),
-    rotate = eval(document.getElementById('rotate').value),
-    scaleX = eval(document.getElementById('scaleX').value),
-    scaleY = eval(document.getElementById('scaleY').value),
-    translateX = eval(document.getElementById('translateX').value),
-    translateY = eval(document.getElementById('translateY').value),
-    skewX = eval(document.getElementById('skewX').value),
-    skewY = eval(document.getElementById('skewY').value);
+var blur = document.getElementById('blur').value,
+    brightness = document.getElementById('brightness').value,
+    contrast = document.getElementById('contrast').value,
+    grayscale = document.getElementById('grayscale').value,
+    hueRotate = document.getElementById('hueRotate').value,
+    invert = document.getElementById('invert').value,
+    saturate = document.getElementById('saturate').value,
+    sepia = document.getElementById('sepia').value,
+    rotate = document.getElementById('rotate').value,
+    scaleX = document.getElementById('scaleX').value,
+    scaleY = document.getElementById('scaleY').value,
+    translateX = document.getElementById('translateX').value,
+    translateY = document.getElementById('translateY').value,
+    skewX = document.getElementById('skewX').value,
+    skewY = document.getElementById('skewY').value;
+
 
 
 Cookies.set(document.getElementById("numType").value, {
