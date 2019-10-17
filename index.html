@@ -24,7 +24,7 @@
     <style>
         a {
         position: absolute;
-        left: 1%;
+        right: 1%;
         bottom: 1%;
         width:10%;
         height:10%;
@@ -152,6 +152,7 @@ video2.parentElement.style.display = "block";
 video1.style.zIndex = 0;
 video2.style.zIndex = 0;
     
+document.getElementsByTagName("a")[0].style.color = "white";
 document.getElementById('layout').style.display = "none";
 }
 else {
@@ -160,7 +161,8 @@ video2.parentElement.style.display = "none";
     
 video1.style.zIndex = 100;
 video2.style.zIndex = 100;
-    
+
+document.getElementsByTagName("a")[0].style.color = "black";
 document.getElementById('layout').style.display = "block";
 }
 }
