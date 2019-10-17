@@ -76,7 +76,7 @@
     <span>skew x </span><input autocomplete="off" id="skewX" value="0"><br>
     <span>skew y </span><input autocomplete="off" id="skewY" value="0"><br>
     
-    <input id="numType" type="number" step="1" value="0">
+    <input id="type" step="1" value="0">
     <button onclick="save()">save</button> 
     <button onclick="load()">load</button>
     <button onclick="del()">delete</button>
@@ -190,7 +190,7 @@ var blur = document.getElementById('blur').value,
 
 
 
-Cookies.set(document.getElementById("numType").value, {
+Cookies.set(document.getElementById("type").value, {
   blur,
   brightness,
   contrast,
@@ -210,7 +210,7 @@ Cookies.set(document.getElementById("numType").value, {
 }
   
 function load(){
-var data = Cookies.getJSON(document.getElementById("numType").value)
+var data = Cookies.getJSON(document.getElementById("type").value)
 
 document.getElementById('blur').value = data.blur;
 document.getElementById('brightness').value = data.brightness;
@@ -232,7 +232,7 @@ document.getElementById('skewY').value = data.skewY;
 }
 
 function del(){
-Cookies.delete(document.getElementById("numType").value)
+Cookies.delete(document.getElementById("type").value)
 }
 
   </script>
