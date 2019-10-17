@@ -75,7 +75,12 @@
     <span>translate y </span><input autocomplete="off" id="translateY" value="0"><br>
     <span>skew x </span><input autocomplete="off" id="skewX" value="0"><br>
     <span>skew y </span><input autocomplete="off" id="skewY" value="0"><br>
-    </div> 
+    
+    <input id="numType" type="number" step="1" value="0">
+    <button onclick="save()">save</button> 
+    <button onclick="load()">load</button>
+    <button onclick="del()">delete</button>
+</div>
 
 <div class="hide" style="left:0px">
     <video playsinline autoplay id="1"></video>
@@ -162,6 +167,71 @@ document.getElementById('layout').style.display = "block";
       
 
 navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError)
+      
+  
+function save(){
+var blur = eval(document.getElementById('blur').value),
+    brightness = eval(document.getElementById('brightness').value),
+    contrast = eval(document.getElementById('contrast').value),
+    grayscale = eval(document.getElementById('grayscale').value),
+    hueRotate = eval(document.getElementById('hueRotate').value),
+    invert = eval(document.getElementById('invert').value),
+    saturate = eval(document.getElementById('saturate').value),
+    sepia = eval(document.getElementById('sepia').value),
+    rotate = eval(document.getElementById('rotate').value),
+    scaleX = eval(document.getElementById('scaleX').value),
+    scaleY = eval(document.getElementById('scaleY').value),
+    translateX = eval(document.getElementById('translateX').value),
+    translateY = eval(document.getElementById('translateY').value),
+    skewX = eval(document.getElementById('skewX').value),
+    skewY = eval(document.getElementById('skewY').value);
+
+
+Cookies.set(document.getElementById("numType").value, {
+  blur,
+  brightness,
+  contrast,
+  grayscale,
+  hueRotate,
+  invert,
+  saturate,
+  sepia,
+  rotate,
+  scaleX,
+  scaleY,
+  translateX,
+  translateY,
+  skewX,
+  skewY
+})
+}
+  
+function load(){
+var data = Cookies.getJSON(document.getElementById("numType").value)
+
+document.getElementById('blur').value = data.blur;
+document.getElementById('brightness').value = data.brightness;
+document.getElementById('contrast').value = data.contrast;
+document.getElementById('grayscale').value = data.grayscale;
+document.getElementById('hueRotate').value = data.hueRotate;
+document.getElementById('invert').value = data.invert;
+document.getElementById('saturate').value = data.saturate;
+document.getElementById('sepia').value = data.sepia;
+document.getElementById('rotate').value = data.rotate;
+document.getElementById('scaleX').value = data.scaleX;
+document.getElementById('scaleY').value = data.scaleY;
+document.getElementById('translateX').value = data.translateX;
+document.getElementById('translateY').value = data.translateY;
+document.getElementById('skewX').value = data.skewX;
+document.getElementById('skewY').value = data.skewY;
+
+  
+}
+
+function del(){
+Cookies.delete(document.getElementById("numType").value)
+}
+
   </script>
 </body>
 </html>
