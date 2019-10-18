@@ -239,7 +239,7 @@ var w  = 0;
 
 function change(){
 w++;
-if (Object.keys(Cookies.get()).length > w) {w=0}
+if (Object.keys(Cookies.get()).length < w) {w=0}
 
 var name = Object.keys(Cookies.get())[w];
 
