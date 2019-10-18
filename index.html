@@ -236,7 +236,7 @@ Cookies.delete(document.getElementById("type").value)
 }
 
 var i  = 0;      
-window.ontouchstart = function(){
+function change(){
 i++;
 if (Object.keys(Cookies.get()).length > i) {i=0}
 
@@ -266,6 +266,9 @@ document.getElementById('skewX').value = data.skewX;
 document.getElementById('skewY').value = data.skewY;
 
 }
+
+video1.ontouchstart = change;
+    
   </script>
 </body>
 </html>
