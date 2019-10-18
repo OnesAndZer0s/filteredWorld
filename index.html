@@ -235,14 +235,15 @@ function del(){
 Cookies.delete(document.getElementById("type").value)
 }
 
-var i  = 0;      
+var w  = 0;
+
 function change(){
-i++;
-if (Object.keys(Cookies.get()).length > i) {i=0}
+w++;
+if (Object.keys(Cookies.get()).length > w) {w=0}
 
-var name = Object.keys(Cookies.get())[i];
+var name = Object.keys(Cookies.get())[w];
 
-alert(name);
+alert(w);
 
 document.getElementById("type").value = name;
 
