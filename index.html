@@ -235,6 +235,30 @@ function del(){
 Cookies.delete(document.getElementById("type").value)
 }
 
+var i  = 0;      
+window.ontouchstart = function(){
+i++;
+if (Object.keys(Cookies.get()).length > i) {i=0}
+
+var data = Cookies.getJSON(Object.keys(Cookies.get())[i])
+
+document.getElementById('blur').value = data.blur;
+document.getElementById('brightness').value = data.brightness;
+document.getElementById('contrast').value = data.contrast;
+document.getElementById('grayscale').value = data.grayscale;
+document.getElementById('hueRotate').value = data.hueRotate;
+document.getElementById('invert').value = data.invert;
+document.getElementById('saturate').value = data.saturate;
+document.getElementById('sepia').value = data.sepia;
+document.getElementById('rotate').value = data.rotate;
+document.getElementById('scaleX').value = data.scaleX;
+document.getElementById('scaleY').value = data.scaleY;
+document.getElementById('translateX').value = data.translateX;
+document.getElementById('translateY').value = data.translateY;
+document.getElementById('skewX').value = data.skewX;
+document.getElementById('skewY').value = data.skewY;
+
+}
   </script>
 </body>
 </html>
