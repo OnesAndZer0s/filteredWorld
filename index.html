@@ -240,7 +240,12 @@ window.ontouchstart = function(){
 i++;
 if (Object.keys(Cookies.get()).length > i) {i=0}
 
-var data = Cookies.getJSON(Object.keys(Cookies.get())[i])
+var name = Object.keys(Cookies.get())[i];
+
+document.getElementById("type").value = name;
+
+var data = Cookies.getJSON(name)
+
 
 document.getElementById('blur').value = data.blur;
 document.getElementById('brightness').value = data.brightness;
